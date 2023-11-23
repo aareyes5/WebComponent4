@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .rotate-button {
+            width: 100px;
+            height: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+    </style>
+    <title>Botón Giratorio</title>
+</head>
+<body>
+
+<button class="rotate-button" onclick="rotateButton()">Girar</button>
+
+<script>
+    let rotationCount = 0;
+
+    function rotateButton() {
+        const button = document.querySelector('.rotate-button');
+        rotationCount += 1;
+
+        // Calcula el ángulo de rotación (360 grados por cada clic)
+        const rotationAngle = rotationCount * 360;
+
+        // Aplica la transformación al botón
+        button.style.transform = `rotate(${rotationAngle}deg)`;
+
+        // Si deseas reiniciar después de un cierto número de vueltas, descomenta la línea siguiente
+        // y establece el número de vueltas deseado (por ejemplo, 5):
+        // if (rotationCount === 5) rotationCount = 0;
+    }
+</script>
+
+</body>
+</html>

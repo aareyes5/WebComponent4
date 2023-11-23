@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      overflow: hidden; /* Para ocultar el desbordamiento horizontal */
+    }
+
+    #movableImage {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      transition: left 0.5s ease-in-out;
+    }
+
+    button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <img id="movableImage" src="tu-imagen.jpg" alt="Imagen Móvil">
+  <button onclick="moverImagen()">Mover Imagen</button>
+
+  <script>
+    let moviendoDerecha = true;
+    const movableImage = document.getElementById('movableImage');
+
+    function moverImagen() {
+      if (moviendoDerecha) {
+        movableImage.style.left = 'calc(100% - 50px)';
+      } else {
+        movableImage.style.left = '0';
+      }
+      moviendoDerecha = !moviendoDerecha;
+    }
+  </script>
+</body>
+</html>

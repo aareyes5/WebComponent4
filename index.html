@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="componente.js"></script>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+    <title>Botón Giratorio</title>
+</head>
+<body>
+    <rotate-button id="rotateButton"></rotate-button>
+    <movable-image id="movableImage"></movable-image>
+
+    <script>
+        const movableImage = document.getElementById('movableImage');
+        const rotateButton = document.getElementById('rotateButton');
+
+        // Escucha el evento personalizado 'rotate-click' del botón
+        rotateButton.addEventListener('rotate-click', () => {
+            movableImage.moveImage();
+        });
+    </script>
+</body>
+</html>
